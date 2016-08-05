@@ -9,6 +9,9 @@
 - Setup Winston error logger
 - Setup Morgan Access logger
 - Clustering Node.js app
+- Local authentication app using node.js/express & passport.js
+- Serving HTML form node.js
+- JWT authentication for node.js API
 
 ##### Follow these steps to use
 1. Download and install dependencies
@@ -263,6 +266,42 @@ if (cluster.isMaster) {
 }
 
 ```
+##### Chapter-10 Serving Html file from node
+.
+```
+var express = require('express');
+var app = express();
+var path = require('path');
+
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+app.listen(8080);
+console.log("Server is running at http://localhost:8080 ...");
+
+```
+##### Chapter-11 Local authentication with node.js using Passport.js
+- We've used passport.js, Express.js & EJS templates for making this sample for basic login and signup system.
+- (Please review the read me inside this chapter for internal details)
+
+##### Chapter-12 Token Based authentication for node.js API
+
+
+#### NPM/Node modules versioning
+
+- latest =	Takes the latest version possible. Not the safest thing to use.
+- *, x	= Wildcards. Can be any version at all. Crazy stuff.
+- 4, 4.*, 4.x, ~4, ^4	= Any version that starts with 4. Takes the latest.
+- ">4.8.5"	= Choose any version greater than a specific version. Could break your application.
+- <4.8.5	= Choose any version lower than a specific version.
+- ">=4.8.5"	 = Anything greater than or equal to a specific version.
+- <=4.8.5	= Anything less than or equal to.
+- 4.8.3 - 4.8.5	 = Anything within a range of versions. The equivalent of >=4.8.3 and <=4.8.5
+- ~4.8.5	= Any version “reasonably close to 4.8.5”. This will call use all versions up to, but less than 4.9.0
+- ~4.8	= Any version that starts with 4.8
+- ^4.8.5	= Any version “compatible with 4.8.5”. This will call versions up to the next major version like 5.0.0. Could break your application if there are major differences in the next major version.
+- ~1.2	= Any version compatible with 1.2
 
 
 #### TODOs
@@ -270,6 +309,7 @@ if (cluster.isMaster) {
 - Accessing SQLite
 - Crone / Task Schedular with Node.js
 - Realtime Socket.io with Node.js
+- Testing with Mocha & Chai
 
 ###### About me
 - Bhavin Patel [https://itsmebhavin.wordpress.com]
