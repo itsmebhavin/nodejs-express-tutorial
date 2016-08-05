@@ -1,6 +1,9 @@
 {
   "name": "node-token-jwt",
   "main": "server.js",
+  "scripts":{
+      "build" : "node server"
+    },
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",

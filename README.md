@@ -286,7 +286,8 @@ console.log("Server is running at http://localhost:8080 ...");
 - (Please review the read me inside this chapter for internal details)
 
 ##### Chapter-12 Token Based authentication for node.js API
-
+- We've use jsonwebtoken library to implment JWT token based authentication in API
+- (Please review the read me inside this chapter for internal details)
 
 #### NPM/Node modules versioning
 
