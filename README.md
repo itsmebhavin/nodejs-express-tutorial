@@ -2,16 +2,18 @@
 
 ##### Following things are covered in this learning node.js series
 - Node.js Basic setup
-- Express.js implementation and basic setup
-- Express.js API routes setup
-- Express.js API Router and Parameters setup
-- Setup Mongodb and use it with Express.js API (CRUD)
-- Setup Winston error logger
-- Setup Morgan Access logger
-- Clustering Node.js app
-- Local authentication app using node.js/express & passport.js
-- Serving HTML form node.js
-- JWT authentication for node.js API
+- Express.js implementation and basic setup (ch-1-4)
+- Express.js API routes setup (ch-5)
+- Express.js API Router and Parameters setup (ch-5)
+- Setup Mongodb and use it with Express.js API (CRUD) (ch-6)
+- Setup Winston error logger (ch-7)
+- Setup Morgan Access logger (ch-8)
+- Clustering Node.js app (ch-9)
+- Serving HTML form node.js (ch-10)
+- Local authentication app using node.js/express & passport.js (ch-11)
+- JWT authentication for node.js API (ch-12)
+- File I/O using Node.js (ch-13)
+- Child_Process & Scaling Node.js (ch-14)
 
 ##### Follow these steps to use
 1. Download and install dependencies
@@ -311,6 +313,7 @@ console.log("Server is running at http://localhost:8080 ...");
 - Crone / Task Schedular with Node.js
 - Realtime Socket.io with Node.js
 - Testing with Mocha & Chai
+- Buffers and Streams in node.js
 
 ###### About me
 - Bhavin Patel [https://itsmebhavin.wordpress.com]
