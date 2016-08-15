@@ -292,6 +292,292 @@ console.log("Server is running at http://localhost:8080 ...");
 - We've use jsonwebtoken library to implment JWT token based authentication in API
 - (Please review the read me inside this chapter for internal details)
 
+##### Chapter-13 File I/O using Node.js
+```
+SN
+Method & Description
+
+1
+fs.renameoldPath,newPath,callback<?XML:NAMESPACE PREFIX = "[default] http://www.w3.org/1998/Math/MathML" NS = "http://www.w3.org/1998/Math/MathML" />oldPath,newPath,callback
+Asynchronous rename. No arguments other than a possible exception are given to the completion callback.
+
+2
+fs.ftruncatefd,len,callbackfd,len,callback
+Asynchronous ftruncate. No arguments other than a possible exception are given to the completion callback.
+
+3
+fs.ftruncateSyncfd,lenfd,len
+Synchronous ftruncate
+
+4
+fs.truncatepath,len,callbackpath,len,callback
+Asynchronous truncate. No arguments other than a possible exception are given to the completion callback.
+
+5
+fs.truncateSyncpath,lenpath,len
+Synchronous truncate
+
+6
+fs.chownpath,uid,gid,callbackpath,uid,gid,callback
+Asynchronous chown. No arguments other than a possible exception are given to the completion callback.
+
+7
+fs.chownSyncpath,uid,gidpath,uid,gid
+Synchronous chown
+
+8
+fs.fchownfd,uid,gid,callbackfd,uid,gid,callback
+Asynchronous fchown. No arguments other than a possible exception are given to the completion callback.
+
+9
+fs.fchownSyncfd,uid,gidfd,uid,gid
+Synchronous fchown
+
+10
+fs.lchownpath,uid,gid,callbackpath,uid,gid,callback
+Asynchronous lchown. No arguments other than a possible exception are given to the completion callback.
+
+11
+fs.lchownSyncpath,uid,gidpath,uid,gid
+Synchronous lchown
+
+12
+fs.chmodpath,mode,callbackpath,mode,callback
+Asynchronous chmod. No arguments other than a possible exception are given to the completion callback.
+
+13
+fs.chmodSyncpath,modepath,mode
+Synchronous chmod.
+
+14
+fs.fchmodfd,mode,callbackfd,mode,callback
+Asynchronous fchmod. No arguments other than a possible exception are given to the completion callback.
+
+15
+fs.fchmodSyncfd,modefd,mode
+Synchronous fchmod.
+
+16
+fs.lchmodpath,mode,callbackpath,mode,callback
+Asynchronous lchmod. No arguments other than a possible exception are given to the completion callback.Only available on Mac OS X.
+
+17
+fs.lchmodSyncpath,modepath,mode
+Synchronous lchmod.
+
+18
+fs.statpath,callbackpath,callback
+Asynchronous stat. The callback gets two arguments err,statserr,stats where stats is a fs.Stats object.
+
+19
+fs.lstatpath,callbackpath,callback
+Asynchronous lstat. The callback gets two arguments err,statserr,stats where stats is a fs.Stats object. lstat is identical to stat, except that if path is a symbolic link, then the link itself is stat-ed, not the file that it refers to.
+
+20
+fs.fstatfd,callbackfd,callback
+Asynchronous fstat. The callback gets two arguments err,statserr,stats where stats is a fs.Stats object. fstat is identical to stat, except that the file to be stat-ed is specified by the file descriptor fd.
+
+21
+fs.statSyncpathpath
+Synchronous stat. Returns an instance of fs.Stats.
+
+22
+fs.lstatSyncpathpath
+Synchronous lstat. Returns an instance of fs.Stats.
+
+23
+fs.fstatSyncfdfd
+Synchronous fstat. Returns an instance of fs.Stats.
+
+24
+fs.linksrcpath,dstpath,callbacksrcpath,dstpath,callback
+Asynchronous link. No arguments other than a possible exception are given to the completion callback.
+
+25
+fs.linkSyncsrcpath,dstpathsrcpath,dstpath
+Synchronous link.
+
+26
+fs.symlinksrcpath,dstpath[,type],callbacksrcpath,dstpath[,type],callback
+Asynchronous symlink. No arguments other than a possible exception are given to the completion callback. The type argument can be set to 'dir', 'file', or 'junction' defaultis′file′defaultis′file′ and is only available on Windows ignoredonotherplatformsignoredonotherplatforms. Note that Windows junction points require the destination path to be absolute. When using 'junction', the destination argument will automatically be normalized to absolute path.
+
+27
+fs.symlinkSyncsrcpath,dstpath[,type]srcpath,dstpath[,type]
+Synchronous symlink.
+
+28
+fs.readlinkpath,callbackpath,callback
+Asynchronous readlink. The callback gets two arguments err,linkStringerr,linkString.
+
+29
+fs.realpathpath[,cache],callbackpath[,cache],callback
+Asynchronous realpath. The callback gets two arguments err,resolvedPatherr,resolvedPath. May use process.cwd to resolve relative paths. cache is an object literal of mapped paths that can be used to force a specific path resolution or avoid additional fs.stat calls for known real paths.
+
+30
+fs.realpathSyncpath[,cache]path[,cache]
+Synchronous realpath. Returns the resolved path.
+
+31
+fs.unlinkpath,callbackpath,callback
+Asynchronous unlink. No arguments other than a possible exception are given to the completion callback.
+
+32
+fs.unlinkSyncpathpath
+Synchronous unlink.
+
+33
+fs.rmdirpath,callbackpath,callback
+Asynchronous rmdir. No arguments other than a possible exception are given to the completion callback.
+
+34
+fs.rmdirSyncpathpath
+Synchronous rmdir.
+
+35
+fs.mkdirpath[,mode],callbackpath[,mode],callback
+SAsynchronous mkdir22. No arguments other than a possible exception are given to the completion callback. mode defaults to 0777.
+
+36
+fs.mkdirSyncpath[,mode]path[,mode]
+Synchronous mkdir.
+
+37
+fs.readdirpath,callbackpath,callback
+Asynchronous readdir33. Reads the contents of a directory. The callback gets two arguments err,fileserr,files where files is an array of the names of the files in the directory excluding '.' and '..'.
+
+38
+fs.readdirSyncpathpath
+Synchronous readdir. Returns an array of filenames excluding '.' and '..'.
+
+39
+fs.closefd,callbackfd,callback
+Asynchronous close. No arguments other than a possible exception are given to the completion callback.
+
+40
+fs.closeSyncfdfd
+Synchronous close.
+
+41
+fs.openpath,flags[,mode],callbackpath,flags[,mode],callback
+Asynchronous file open.
+
+42
+fs.openSyncpath,flags[,mode]path,flags[,mode]
+Synchronous version of fs.open.
+
+43
+fs.utimespath,atime,mtime,callbackpath,atime,mtime,callback
+
+44
+fs.utimesSyncpath,atime,mtimepath,atime,mtime
+Change file timestamps of the file referenced by the supplied path.
+
+45
+fs.futimesfd,atime,mtime,callbackfd,atime,mtime,callback
+
+46
+fs.futimesSyncfd,atime,mtimefd,atime,mtime
+Change the file timestamps of a file referenced by the supplied file descriptor.
+
+47
+fs.fsyncfd,callbackfd,callback
+Asynchronous fsync. No arguments other than a possible exception are given to the completion callback.
+
+48
+fs.fsyncSyncfdfd
+Synchronous fsync.
+
+49
+fs.writefd,buffer,offset,length[,position],callbackfd,buffer,offset,length[,position],callback
+Write buffer to the file specified by fd.
+
+50
+fs.writefd,data[,position[,encoding]],callbackfd,data[,position[,encoding]],callback
+Write data to the file specified by fd. If data is not a Buffer instance then the value will be coerced to a string.
+
+51
+fs.writeSyncfd,buffer,offset,length[,position]fd,buffer,offset,length[,position]
+Synchronous versions of fs.write. Returns the number of bytes written.
+
+52
+fs.writeSyncfd,data[,position[,encoding]]fd,data[,position[,encoding]]
+Synchronous versions of fs.write. Returns the number of bytes written.
+
+53
+fs.readfd,buffer,offset,length,position,callbackfd,buffer,offset,length,position,callback
+Read data from the file specified by fd.
+
+54
+fs.readSyncfd,buffer,offset,length,positionfd,buffer,offset,length,position
+Synchronous version of fs.read. Returns the number of bytesRead.
+
+55
+fs.readFilefilename[,options],callbackfilename[,options],callback
+Asynchronously reads the entire contents of a file.
+
+56
+fs.readFileSyncfilename[,options]filename[,options]
+Synchronous version of fs.readFile. Returns the contents of the filename.
+
+57
+fs.writeFilefilename,data[,options],callbackfilename,data[,options],callback
+Asynchronously writes data to a file, replacing the file if it already exists. data can be a string or a buffer.
+
+58
+fs.writeFileSyncfilename,data[,options]filename,data[,options]
+The synchronous version of fs.writeFile.
+
+59
+fs.appendFilefilename,data[,options],callbackfilename,data[,options],callback
+Asynchronously append data to a file, creating the file if it not yet exists. data can be a string or a buffer.
+
+60
+fs.appendFileSyncfilename,data[,options]filename,data[,options]
+The synchronous version of fs.appendFile.
+
+61
+fs.watchFilefilename[,options],listenerfilename[,options],listener
+Watch for changes on filename. The callback listener will be called each time the file is accessed.
+
+62
+fs.unwatchFilefilename[,listener]filename[,listener]
+Stop watching for changes on filename. If listener is specified, only that particular listener is removed. Otherwise, all listeners are removed and you have effectively stopped watching filename.
+
+63
+fs.watchfilename[,options][,listener]filename[,options][,listener]
+Watch for changes on filename, where filename is either a file or a directory. The returned object is a fs.FSWatcher.
+
+64
+fs.existspath,callbackpath,callback
+Test whether or not the given path exists by checking with the file system. Then call the callback argument with either true or false.
+
+65
+fs.existsSyncpathpath
+Synchronous version of fs.exists.
+
+66
+fs.accesspath[,mode],callbackpath[,mode],callback
+Tests a user's permissions for the file specified by path. mode is an optional integer that specifies the accessibility checks to be performed.
+
+67
+fs.accessSyncpath[,mode]path[,mode]
+Synchronous version of fs.access. This throws if any accessibility checks fail, and does nothing otherwise.
+
+68
+fs.createReadStreampath[,options]path[,options]
+Returns a new ReadStream object.
+
+69
+fs.createWriteStreampath[,options]path[,options]
+Returns a new WriteStream object.
+
+70
+fs.symlinksrcpath,dstpath[,type],callbacksrcpath,dstpath[,type],callback
+Asynchronous symlink. No arguments other than a possible exception are given to the completion callback. The type argument can be set to 'dir', 'file', or 'junction' defaultis′file′defaultis′file′ and is only available on Windows ignoredonotherplatformsignoredonotherplatforms. Note that Windows junction points require the destination path to be absolute. When using 'junction', the destination argument will automatically be normalized to absolute path.
+
+
+```
+
 #### NPM/Node modules versioning
 
 - latest =	Takes the latest version possible. Not the safest thing to use.
