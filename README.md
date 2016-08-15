@@ -14,6 +14,7 @@
 - JWT authentication for node.js API (ch-12)
 - File I/O using Node.js (ch-13)
 - Child_Process & Scaling Node.js (ch-14)
+- Unit testing with Mocha and Chai (ch-15)
 
 ##### Follow these steps to use
 1. Download and install dependencies
@@ -308,11 +309,8 @@ console.log("Server is running at http://localhost:8080 ...");
 
 
 #### TODOs
-- Accessing SQL Server
-- Accessing SQLite
 - Crone / Task Schedular with Node.js
 - Realtime Socket.io with Node.js
-- Testing with Mocha & Chai
 - Buffers and Streams in node.js
 
 ###### About me
