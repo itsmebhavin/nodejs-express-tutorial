@@ -1,0 +1,3 @@
+{
+    "DBHost": "mongodb://localhost/node_tutorial_ch15_testing"
+}
