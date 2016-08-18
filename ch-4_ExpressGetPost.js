@@ -57,11 +57,11 @@ app.get('/users/:userId/books/:bookId', function(req, res) {
 */
 
 
-app.get('flights/:from-:to', function(req, res) {
+app.get('/flights/:from-:to', function(req, res) {
   res.send(req.params);
 });
 
-app.get('plantae/:type.:species', function(req, res) {
+app.get('/plantae/:type.:species', function(req, res) {
   res.send(req.params);
 });
 
