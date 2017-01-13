@@ -578,6 +578,20 @@ Asynchronous symlink. No arguments other than a possible exception are given to 
 
 ```
 
+#### Now with Docker Support
+```
+Build> docker build -t <imagename>:<tagnumber> .
+```
+
+```
+Run> docker run -p 3000:3000 --name <containerName> <imagename>:<tagnumber>
+```
+
+```
+Kill Images> docker rmi -f <imagename>
+Kill Container> docker rm -f <containername>
+```
+
 #### NPM/Node modules versioning
 
 - latest =	Takes the latest version possible. Not the safest thing to use.
