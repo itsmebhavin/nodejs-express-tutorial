@@ -578,7 +578,7 @@ Asynchronous symlink. No arguments other than a possible exception are given to 
 
 ```
 
-#### Now with Docker Support
+### Now with Docker Support
 ```
 Build> docker build -t <imagename>:<tagnumber> .
 ```
@@ -591,6 +591,19 @@ Run> docker run -p 3000:3000 --name <containerName> <imagename>:<tagnumber>
 Kill Images> docker rmi -f <imagename>
 Kill Container> docker rm -f <containername>
 ```
+
+```
+Example
+>Docker build -t fundemo:10.0 //For ch-10
+>Docker build -t fundemo:4.0 //for ch-4
+>Docker Images //for list of Images
+>Docker rmi -f fundemo:10.0 // to remove image
+>Docker run -p 3000:3000 --name fundemoRun fundemo:10.0 //to run ch-10 image
+>Docker ps -a //list all containers
+>Docker rm -f fundemoRun
+```
+
+
 
 #### NPM/Node modules versioning
 
