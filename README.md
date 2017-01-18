@@ -605,6 +605,9 @@ Example
 >Docker stop <ContainerName>
 >Docker restart <ContainerName>
 >Docker kill <ContainerName>
+>Docker commit <Container ID> nameofimage
+>Docker save nameofimage > /tmp/nameofimage.tar
+>Docker load < /tmp/nameofimage.tar
 ```
 
 ```
