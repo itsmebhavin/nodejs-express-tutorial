@@ -601,6 +601,15 @@ Example
 >Docker run -p 3000:3000 --name fundemoRun fundemo:10.0 //to run ch-10 image
 >Docker ps -a //list all containers
 >Docker rm -f fundemoRun
+>Docker start <ContainerName>
+>Docker stop <ContainerName>
+>Docker restart <ContainerName>
+>Docker kill <ContainerName>
+```
+
+```
+Docker Commands 
+https://docs.docker.com/engine/reference/commandline/
 ```
 
 
